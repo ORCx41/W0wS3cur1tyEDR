@@ -9,7 +9,7 @@
     - NtWriteVirtualMemory
     - NtAllocateVirtualMemory
     - NtProtectVirtualMemory 
-- some hooks can even dump the RWX sections     
+- NtProtectVirtualMemory hook can even dump the RWX sections     
 - i added a 'payload.dll' file that can be used as a test, it runs all the 4 hooked api's and can be injected automatically by the juicy edr, it runs `metasploit's calc shellcode` so it may be detected by your av before the demo, so dw im not hacking you.
 
 ### USAGE:
