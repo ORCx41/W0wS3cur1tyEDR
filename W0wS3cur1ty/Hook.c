@@ -93,13 +93,13 @@ CONSOLE Console = { 0 };
         LPWSTR buf = (LPWSTR)HeapAlloc( GetProcessHeap(), HEAP_ZERO_MEMORY, 1024 );         \
         if ( buf != NULL ) {                                                                \
             int len = wsprintfW( buf, STR, __VA_ARGS__ );                                   \
-            WriteConsoleW( Console.hOConsole, buf, len, NULL, NULL );						\
+            WriteConsoleW( Console.hOConsole, buf, len, NULL, NULL );			    \
             HeapFree( GetProcessHeap(), 0, buf );                                           \
         }                                                                                   \
     }  
 
-#define PWND(A, S)																			\
-			WriteBytes((unsigned char*)A, (SIZE_T) S);										\
+#define PWND(A, S)   									    \
+			WriteBytes((unsigned char*)A, (SIZE_T) S);			    \
 
 
 BOOL CreateConsole() {
