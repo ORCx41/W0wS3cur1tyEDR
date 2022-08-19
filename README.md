@@ -4,13 +4,13 @@
 - W0wS3cur1tyEDR consists from 2 projects : 
     - [W0wS3cur1ty](https://github.com/ORCx41/W0wS3cur1tyEDR/tree/main/W0wS3cur1ty), which is the dll file that will get injected to a target process
     - [WSEdr](https://github.com/ORCx41/W0wS3cur1tyEDR/tree/main/WSEdr), the enjector that will inject `W0wS3cur1ty.dll` into the target process
-- the dll files, create a new console, and write data to it, it hooks (using minhook library):
+- the dll file, create a new console, and write data to it, it hooks (using minhook library):
     - NtCreateThreadEx
     - NtWriteVirtualMemory
     - NtAllocateVirtualMemory
     - NtProtectVirtualMemory 
 - NtProtectVirtualMemory hook can even dump the RWX sections     
-- i added a 'payload.dll' file that can be used as a test, it runs all the 4 hooked api's and can be injected automatically by the juicy edr, it runs `metasploit's calc shellcode` so it may be detected by your av before the demo, so dw im not hacking you.
+- i added a 'payload.dll' file that can be used as a test, it runs all the 4 hooked api's and can be injected automatically by the juicy edr, it runs `metasploit's calc shellcode` so it may be detected by your av before the demo...
 
 ### USAGE:
 ```
