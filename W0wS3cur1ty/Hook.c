@@ -87,7 +87,7 @@ typedef struct {
 }CONSOLE;
 
 CONSOLE Console = { 0 };
-
+// https://github.com/rad9800/WTSRM/blob/master/WTSRM/entry.cpp#L34
 #define PRINT( STR, ... )                                                                   \
     if (1) {                                                                                \
         LPWSTR buf = (LPWSTR)HeapAlloc( GetProcessHeap(), HEAP_ZERO_MEMORY, 1024 );         \
