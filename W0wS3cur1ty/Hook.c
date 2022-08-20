@@ -155,7 +155,7 @@ BOOL InitializeHooks() {
 		((Merr = MH_CreateHookApi(TEXT("ntdll"), "NtAllocateVirtualMemory", MyNtAllocateVirtualMemory, (LPVOID*)&GS.NtAllocateVirtualMemory) != MH_OK)) ||
 		((Merr = MH_CreateHookApi(TEXT("ntdll"), "NtProtectVirtualMemory", MyNtProtectVirtualMemory, (LPVOID*)&GS.NtProtectVirtualMemory) != MH_OK))
 		){
-		ReportError(L"DetourAttach", Merr);
+		ReportError(L"MH_CreateHookApi", Merr);
 		return FALSE;
 	}
 	
@@ -270,7 +270,8 @@ NTSTATUS WINAPI MyNtAllocateVirtualMemory(
 		return GS.NtAllocateVirtualMemory(ProcessHandle, BaseAddress, ZeroBits, RegionSize, AllocationType, Protect);
 	}
 
-	return GS.NtAllocateVirtualMemory(ProcessHandle, BaseAddress, ZeroBits, RegionSize, AllocationType, Protect);
+	// wont reach this:
+	return STATUS;
 }
 
 
